@@ -1,0 +1,452 @@
+@font-face {
+  font-family: "NanumBarunGothic";
+  font-style: normal;
+  font-weight: 400;
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot");
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix")
+      format("embedded-opentype"),
+    url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff")
+      format("woff"),
+    url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf")
+      format("truetype");
+}
+
+@font-face {
+  font-family: "NanumBarunGothic";
+  font-style: normal;
+  font-weight: 700;
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot");
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix")
+      format("embedded-opentype"),
+    url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff")
+      format("woff"),
+    url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf")
+      format("truetype");
+}
+
+.nanumbarungothic * {
+  font-family: "NanumBarunGothic", sans-serif;
+}
+
+html,
+body {
+  font-family: "NanumBarunGothic", sans-serif;
+  font-weight: 300;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: inherit;
+  color: inherit;
+  margin: 0;
+}
+
+body {
+  padding: 20px;
+  background: #eee;
+  user-select: none;
+  background-color: #1e1e1e;
+  overflow: hidden;
+}
+
+[type="radio"],
+.text {
+  display: none;
+}
+
+.main-logo {
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-grow: 1;
+}
+.main-logo > a > img {
+  width: 200px;
+  height: 100px;
+}
+#slider {
+  height: 35vw;
+  position: relative;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  margin-top: 0px;
+}
+
+#slider label {
+  width: 50%;
+  height: 100%;
+  border-radius: 20px;
+  position: absolute;
+  left: 400px;
+  right: 0;
+  cursor: pointer;
+  transition: transform 0.7s ease;
+  margin-left: 300px;
+}
+
+/* 자동차 이미지 */
+img {
+  object-fit: cover;
+  box-sizing: border-box;
+  border: 2px solid rgb(29, 29, 29);
+  border-radius: 7px;
+  -moz-border-radius: 7px;
+  -khtml-border-radius: 7px;
+  -webkit-border-radius: 5px;
+}
+
+#s1:checked ~ .text1,
+#s1:checked ~ .refImg,
+#s2:checked ~ .text2,
+#s3:checked ~ .text3,
+#s4:checked ~ .text4,
+#s5:checked ~ .text5,
+#s6:checked ~ .text6,
+#s7:checked ~ .text7,
+#s8:checked ~ .text8,
+#s9:checked ~ .text9 {
+  box-shadow: 0 13px 25px 0 rgba(0, 0, 0, 0.3), 0 11px 7px 0 rgba(0, 0, 0, 0.19);
+
+  display: block;
+}
+
+#s1:checked ~ #slide1,
+#s2:checked ~ #slide2,
+#s3:checked ~ #slide3,
+#s4:checked ~ #slide4,
+#s5:checked ~ #slide5,
+#s6:checked ~ #slide6,
+#s7:checked ~ #slide7,
+#s8:checked ~ #slide8,
+#s9:checked ~ #slide9 {
+  box-shadow: 0 13px 25px 0 rgba(0, 0, 0, 0.3), 0 11px 7px 0 rgba(0, 0, 0, 0.19);
+
+  -webkit-box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3),
+    0 15px 12px rgba(0, 0, 0, 0.22);
+  -moz-box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3),
+    0 15px 12px rgba(0, 0, 0, 0.22);
+  -ms-box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3),
+    0 15px 12px rgba(0, 0, 0, 0.22);
+  -o-box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  transform: translate3d(-5%, -0%, 100px) rotateY(-0deg);
+}
+
+#s1:checked ~ #slide2,
+#s2:checked ~ #slide3,
+#s3:checked ~ #slide4,
+#s4:checked ~ #slide5,
+#s5:checked ~ #slide6,
+#s6:checked ~ #slide7,
+#s7:checked ~ #slide8,
+#s8:checked ~ #slide9,
+#s9:checked ~ #slide1 {
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3), 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+
+  transform: translate3d(25%, -0%, -200px) rotateY(-20deg);
+}
+
+#s1:checked ~ #slide3,
+#s2:checked ~ #slide4,
+#s3:checked ~ #slide5,
+#s4:checked ~ #slide6,
+#s5:checked ~ #slide7,
+#s6:checked ~ #slide8,
+#s7:checked ~ #slide9,
+#s8:checked ~ #slide1,
+#s9:checked ~ #slide2 {
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+
+  transform: translate3d(50%, -0%, -400px) rotateY(-20deg);
+}
+
+#s1:checked ~ #slide4,
+#s2:checked ~ #slide5,
+#s3:checked ~ #slide6,
+#s4:checked ~ #slide7,
+#s5:checked ~ #slide8,
+#s6:checked ~ #slide9,
+#s7:checked ~ #slide1,
+#s8:checked ~ #slide2,
+#s9:checked ~ #slide3 {
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3), 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+
+  transform: translate3d(75%, -0%, -600px) rotateY(-20deg);
+}
+
+#s1:checked ~ #slide5,
+#s2:checked ~ #slide6,
+#s3:checked ~ #slide7,
+#s4:checked ~ #slide8,
+#s5:checked ~ #slide9,
+#s6:checked ~ #slide1,
+#s7:checked ~ #slide2,
+#s8:checked ~ #slide3,
+#s9:checked ~ #slide4 {
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+
+  transform: translate3d(100%, -0%, -800px) rotateY(-20deg);
+}
+
+#s1:checked ~ #slide6,
+#s2:checked ~ #slide7,
+#s3:checked ~ #slide8,
+#s4:checked ~ #slide9,
+#s5:checked ~ #slide1,
+#s6:checked ~ #slide2,
+#s7:checked ~ #slide3,
+#s8:checked ~ #slide4,
+#s9:checked ~ #slide5 {
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3), 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+  transform: translate3d(75%, -0%, -500px);
+  display: none;
+}
+
+#s1:checked ~ #slide7,
+#s2:checked ~ #slide8,
+#s3:checked ~ #slide9,
+#s4:checked ~ #slide1,
+#s5:checked ~ #slide2,
+#s6:checked ~ #slide3,
+#s7:checked ~ #slide4,
+#s8:checked ~ #slide5,
+#s9:checked ~ #slide6 {
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3), 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+  transform: translate3d(90%, -60%, -600px);
+  display: none;
+}
+
+#s1:checked ~ #slide8,
+#s2:checked ~ #slide9,
+#s3:checked ~ #slide1,
+#s4:checked ~ #slide2,
+#s5:checked ~ #slide3,
+#s6:checked ~ #slide4,
+#s7:checked ~ #slide5,
+#s8:checked ~ #slide6,
+#s9:checked ~ #slide7 {
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3), 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+  transform: translate3d(105%, -70%, -700px);
+  display: none;
+}
+
+#s1:checked ~ #slide9,
+#s2:checked ~ #slide1,
+#s3:checked ~ #slide2,
+#s4:checked ~ #slide3,
+#s5:checked ~ #slide4,
+#s6:checked ~ #slide5,
+#s7:checked ~ #slide6,
+#s8:checked ~ #slide7,
+#s9:checked ~ #slide8 {
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3), 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+  transform: translate3d(120%, -80%, -800px);
+  display: none;
+}
+
+.logo-box {
+  /* border: 1px solid indigo; */
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: start;
+  margin-top: 40px;
+}
+
+/* 벤츠로고 */
+.owc-header-star {
+  width: 200px;
+  height: 100px;
+  margin-left: -15px;
+}
+/* bmw로고 */
+.text2 > .logo-box > a > img {
+  border: none;
+  width: 200px;
+  height: 100px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  vertical-align: bottom;
+  object-fit: cover;
+  margin-left: -20px;
+}
+/* 현대로고 */
+.text3 > .logo-box > a > img {
+  border: none;
+  width: 200px;
+  height: 100px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  vertical-align: bottom;
+  object-fit: cover;
+}
+/* 마세라테로고 */
+.text4 > .logo-box > a > img {
+  border: none;
+  width: 200px;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  vertical-align: bottom;
+  object-fit: cover;
+  padding-left: 20px;
+}
+/* 쉐보레로고 */
+.text5 > .logo-box > a > img {
+  border: none;
+  width: 200px;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  vertical-align: bottom;
+  object-fit: cover;
+  margin-left: 20px;
+}
+/* 기아로고 */
+.text6 > .logo-box > a > img {
+  border: none;
+  width: 200px;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  vertical-align: bottom;
+  object-fit: cover;
+  margin-left: 20px;
+}
+/* 폭스바겐로고 */
+.text7 > .logo-box > a > img {
+  border: none;
+  width: 200px;
+  height: 120px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  vertical-align: bottom;
+  object-fit: cover;
+  margin-left: -10px;
+}
+/* 아우디로고 */
+.text8 > .logo-box > a > img {
+  border: none;
+  width: 250px;
+  height: 100px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  vertical-align: bottom;
+  object-fit: cover;
+  margin-left: -10px;
+}
+
+/* =======텍스트======= */
+.text {
+  position: absolute;
+  width: 550px;
+  height: 100%;
+  left: 20px;
+  /* border: 1px solid red; */
+  background-color: #fcfcfc;
+  border-radius: 15px;
+  margin: 0 auto;
+}
+
+.text > .text-box > .text-content-1 {
+  /* border: 1px solid blue; */
+  width: 500px;
+  height: 100%;
+  text-align: start;
+  margin: 0 auto;
+
+  font-size: 30px;
+  font-weight: 400;
+}
+.text > .text-box > .text-content-2 {
+  /* border: 1px solid red; */
+  width: 500px;
+  height: 100%;
+  text-align: end;
+  margin: 0 auto;
+  font-size: 30px;
+  font-weight: 400;
+  margin-top: 20px;
+}
+
+.cont-tit {
+  /* border: 1px solid red; */
+  text-align: start;
+  font-size: 38px;
+  font-weight: 500;
+}
+.cont-tit-2 {
+  font-size: 35px;
+  text-align: end;
+}
+p {
+  font-size: 28px;
+}
+span {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.text-bmw {
+  font-size: 28px;
+}
+.text-maserati {
+  font-size: 30px;
+}
+.date {
+  /* border: 1px solid orange; */
+  font-size: 2rem;
+  color: #999;
+  letter-spacing: 0;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  margin-top: 40px;
+  padding: 20px 20px 20px 0;
+}
+
+.refImg {
+  opacity: 0;
+  transition: opacity 1s;
+  border: 2px solid rgb(34, 34, 34);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  vertical-align: bottom;
+  object-fit: cover;
+
+  transform: scaleY(-1);
+  width: 100%;
+  transform: scaleY(-1); /* Flip the image vertically */
+  opacity: 0.3; /* Set initial opacity */
+  transition: filter 1s; /* Add a transition effect for opacity changes */
+  clip-path: polygon(0 70%, 100% 70%, 100% 100%, 0 100%);
+}
